@@ -22,7 +22,7 @@ export default class BookList extends Component {
     }
 
     findAllBooks() {
-        axios.get("http://localhost:8081/rest/books")
+        axios.get("https://morning-meadow-05272.herokuapp.com/rest/books")
         .then(response => response.data)
         .then((data) => {
             this.setState({books: data});
@@ -30,7 +30,7 @@ export default class BookList extends Component {
     }
 
     deleteBook = (bookId) => {
-        axios.delete("http://localhost:8081/rest/books/" + bookId)
+        axios.delete("https://morning-meadow-05272.herokuapp.com/rest/books/" + bookId)
         .then(response => {
             if(response.data != null) {
                 this.setState({"show": true})

@@ -27,7 +27,7 @@ export default class Book extends Component {
     }
 
     findBookId = (bookId) => {
-        axios.get("http://localhost:8081/rest/books/" + bookId)
+        axios.get("https://morning-meadow-05272.herokuapp.com/rest/books/" + bookId)
         .then(response => {
             if(response.data != null){
                this.setState({
@@ -64,7 +64,7 @@ export default class Book extends Component {
             language: this.state.language
         };
 
-        axios.post("http://localhost:8081/rest/books", book, headers)
+        axios.post("https://morning-meadow-05272.herokuapp.com/rest/books", book, headers)
         .then(response => {
             if(response.data != null){
                 this.setState({"show": true, "method": "post"})
@@ -112,7 +112,7 @@ export default class Book extends Component {
             language: this.state.language
         };
 
-        axios.put("http://localhost:8081/rest/books", book, headers)
+        axios.put("https://morning-meadow-05272.herokuapp.com/rest/books", book, headers)
         .then(response => {
             if(response.data != null){
                 this.setState({"show": true, "method": "put"})
